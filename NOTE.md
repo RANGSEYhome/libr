@@ -65,10 +65,12 @@ docker compose logs
 
 ### 5. Generate fixture
 
-To populate the database with initial data, you can generate fixtures. This can be done using a script provided in the project. Run the following command:
+To populate the database with initial data, you can generate fixtures. This can be done using a script provided in the project. Run the following command (change libr-express to your EXPRESS_CONTAINER value as you put in .env):
 
 ```sh
-docker exec -i ${EXPRESS_CONTAINER}-1 npm run generate
+EXPRESS_CONTAINER=libr-express
+FIXTURE_CONTAINER=$EXPRESS_CONTAINER-1
+docker exec -i ${FIXTURE_CONTAINER} npm run generate
 ```
 
 ### 6. Access the API
@@ -91,7 +93,7 @@ docker compose down
 
 ## API Documentation
 
-For detailed API documentation, see API Documentation (API_HOST).
+For detailed API documentation, see API Documentation (API_HOST/docs).
 
 ```
 http://localhost:4000/docs
