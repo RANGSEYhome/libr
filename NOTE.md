@@ -27,8 +27,8 @@ Before you begin, ensure you have the following installed on your machine:
 Open your terminal and run the following command to clone the repository:
 
 ```sh
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/RANGSEYhome/libr.git
+cd libr
 ```
 
 ### 2. Setup Environment Variables
@@ -36,7 +36,7 @@ cd your-repo
 Create a `.env` file from the example provided in the repository:
 
 ```sh
-cp .env.example .env
+cp .env.template .env
 ```
 
 Make sure to edit the `.env` file to configure your environment variables as needed.
