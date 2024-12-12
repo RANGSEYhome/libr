@@ -1,37 +1,5 @@
 const { checkSchema } = require("express-validator");
 
-// const signUpSchema = checkSchema({
-//     email: {
-//         isEmail: true,
-//         errorMessage: 'Invalid email address',
-//     },
-//     lastname: {
-//         isAlpha: true,
-//         errorMessage: 'First name is text only',
-//     },
-//     firstname: {
-//         isAlpha: true,
-//         errorMessage: 'Last name is text only',
-//     },
-//     password: {
-//         isLength: {
-//             options: {
-//                 min: 8
-//             }
-//         },
-//         errorMessage: "Password should be at least 8 characters"
-//     },
-//     confirmPassword: {
-//         custom: {
-//             options: async (value, { req }) => {
-//                 if (value != req.body.password) {
-//                     throw new Error("Password doesn't match!")
-//                 }
-//             }
-//         }
-//     }
-// })
-
 const signUpSchema = checkSchema({
   email: {
     notEmpty: {
@@ -119,20 +87,6 @@ const updateUserSchema = checkSchema({
     },
   },
 });
-
-// const addBookSchema = checkSchema({
-//     pages: {
-//         // isNumeric: { value: true, errorMessage: "Page should be number"},
-//         isInt: {
-//             options: {
-//                 min: 1, max: 1000
-//             },
-//             errorMessage: "Page should be number with value between 1 to 1000"
-//         },
-
-//     },
-
-// })
 
 const addBookSchema = checkSchema({
   title: {

@@ -49,8 +49,10 @@ async function generate() {
 
     // Generate Books
     for (let i = 0; i < numberOfBook; i++) {
-      const randomAuthor = authorsList[Math.floor(Math.random() * authorsList.length)];
-      const randomGenre = genresList[Math.floor(Math.random() * genresList.length)];
+      const randomAuthor =
+        authorsList[Math.floor(Math.random() * authorsList.length)];
+      const randomGenre =
+        genresList[Math.floor(Math.random() * genresList.length)];
 
       const newItem = new BookModel({
         title: faker.lorem.sentence(5).replace(/\.$/, ""),

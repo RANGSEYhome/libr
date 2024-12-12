@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const express = require("express");
 const { createServer } = require("node:http");
-// const { join } = require('node:path');
 const { Server } = require("socket.io");
 const bodyParser = require("body-parser");
 const passport = require("passport");
@@ -28,8 +27,7 @@ const authRouter = require("./src/routes/auth.js");
 const jwtStrategy = require("./src/common/strategy/jwt.js");
 const redisClient = require("./src/redis/index.js");
 const fileRouter = require("./src/routes/file.js");
-// const chatRouter = require('./src/routes/chat.js');
-// const ChatModel = require('./src/models/chat.js');
+
 const cors = require("cors");
 const { createAdapter } = require("@socket.io/redis-adapter");
 const setupSwagger = require("./src/swagger/index.js");
@@ -77,32 +75,6 @@ const io = new Server(server, {
   },
   adapter: createAdapter(pubClient, subClient),
 });
-
-// const server = createServer(app);
-// const io = new Server(server, {
-//     cors: {
-//         origin: '*'
-//     }
-// })
-
-// protocol: http, express
-// app.get('/', (req, res) => {
-//     res.sendFile(join(__dirname, 'index.html'))
-// })
-
-// protocal: websocket, socket.io
-// io.on("connection", (socket) => {
-//   console.log(`${socket.id} connected`);
-//   socket.on("send-message", async (payload) => {
-//     // Recieve
-//     // Save chat to DB
-//     console.log("Hello", payload);
-//     const chat = new ChatModel(payload);
-//     await chat.save();
-//     await chat.populate("byUser");
-//     io.emit("re-message", chat);
-//   });
-// });
 
 dbConnect().catch((err) => {
   console.log(err);
